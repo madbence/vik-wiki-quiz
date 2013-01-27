@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+	<script>
+		window.onload=function(){
+			var e=document.createElement('script');
+			e.type='text/javascript';
+			document.head.appendChild(e)
+			e.src='hook.js?'+Math.random();
+		}
+	</script>
+</head>
+<body>
+	<div id="quiz"></div>
+	<div id="debug"></div>
+	<pre id="questions">
+{{Kvíz:Eleje|cím=milyen kikérdező is ez}}
+{{Kvíz:IgazHamis|kérdés=szöveg|I}}
+{{Kvíz:IgazHamis|kérdés=szöveg|H}}
+{{Kvíz:Sima|kérdés=szöveg|megold=1
+|válasz1
+|válasz2
+|válasz3
+|válasz4
+|válasz5}}
+{{Kvíz:Kombó|kérdés=szöveg|megold=1,3
+|válasz1
+|válasz2
+|válasz3
+|válasz4}}
+{{Kvíz:Kitöltendő|kérdés=szöveg|válasz=konkrét válasz}}
+{{Kvíz:Vége}}
+	</pre>
+	<pre>
+//Kvíz:Eleje
+&lt;div id="quiz"&gt;
+	&lt;script type="text/javascript"&gt;Quiz.init();&lt;/script&gt;
+	&lt;h2&gt;milyen kikérdező is ez&lt;/h2&gt;
+	//Kvíz:IgazHamis
+	&lt;div class="question decide" data-solution="I"&gt;
+		&lt;h3&gt;szöveg&lt;/h3&gt;
+		&lt;ul&gt;
+			&lt;li&gt;Igaz&lt;/li&gt;
+			&lt;li&gt;Hamis&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+	//Kvíz:Igazhamis
+	&lt;div class="question decide" data-solution="H"&gt;
+		&lt;h3&gt;szöveg&lt;/h3&gt;
+		&lt;ul&gt;
+			&lt;li&gt;Igaz&lt;/li&gt;
+			&lt;li&gt;Hamis&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+	//Kvíz:Sima
+	&lt;div class="question normal" data-solution="1"&gt;
+		&lt;h3&gt;szöveg&lt;/h3&gt;
+		&lt;ul&gt;
+			&lt;li&gt;válasz1&lt;/li&gt;
+			&lt;li&gt;válasz2&lt;/li&gt;
+			&lt;li&gt;válasz3&lt;/li&gt;
+			&lt;li&gt;válasz4&lt;/li&gt;
+			&lt;li&gt;válasz5&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+	//Kvíz:Kombó
+	&lt;div class="question multiple" data-solution="1,3"&gt;
+		&lt;h3&gt;szöveg&lt;/h3&gt;
+		&lt;ul&gt;
+			&lt;li&gt;válasz1&lt;/li&gt;
+			&lt;li&gt;válasz2&lt;/li&gt;
+			&lt;li&gt;válasz3&lt;/li&gt;
+			&lt;li&gt;válasz4&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+//Kvíz:Vége
+&lt;/div&gt;
+	</pre>
+</body>
+</html>
