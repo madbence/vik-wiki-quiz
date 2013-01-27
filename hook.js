@@ -214,15 +214,3 @@ e.addEventListener('load', function() {
 })
 e.src = 'http://knockoutjs.com/downloads/knockout-2.2.1.js';
 document.head.appendChild(e);
-
-function parse(str) {
-	var m;
-	console.log(str);
-	var regexpG = /\{\{Kvíz:(\w+)(\|(.*?))*\}\}(\r|\n)/g;
-	var regexp = /Kvíz:(\w+)(\|?([^\}]*?))*/;
-	var regexp2 = /\|(.*?)(=[^\|]*)?/g;
-	while(m = regexpG.exec(str)) {
-		console.log(m[0].match(regexp)[0].split('|'));
-	}
-}
-parse(document.getElementById('questions').innerHTML);
