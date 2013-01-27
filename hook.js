@@ -148,7 +148,6 @@ e.addEventListener('load', function() {
 				};
 				self.vote = function(choice) {
 					self.done(self.done() + 1);
-					console.log(self.quiz().answers);
 					if({
 						normal: function() {
 							return self.quiz().solution === choice.index;
@@ -166,7 +165,6 @@ e.addEventListener('load', function() {
 								return i.index;
 							}).sort();
 							var sol = self.quiz().solution.slice(0).sort();
-							console.log(ans, sol);
 							if(ans.length !== sol.length) return false;
 							for(var i in ans) {
 								if(ans[i] !== sol[i]) return false;
